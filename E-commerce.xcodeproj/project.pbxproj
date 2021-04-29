@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		08800AE9263AB69900C33D24 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08800AE8263AB69900C33D24 /* SignUpViewController.swift */; };
 		08800AF0263ABB4600C33D24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08800AEF263ABB4600C33D24 /* GoogleService-Info.plist */; };
+		08800B08263AC4F400C33D24 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08800B07263AC4F400C33D24 /* SignInViewController.swift */; };
 		08FC0F6926395D620090EDB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC0F6826395D620090EDB0 /* AppDelegate.swift */; };
 		08FC0F6B26395D620090EDB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC0F6A26395D620090EDB0 /* SceneDelegate.swift */; };
 		08FC0F6D26395D620090EDB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC0F6C26395D620090EDB0 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		08800AE8263AB69900C33D24 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		08800AEF263ABB4600C33D24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		08800B07263AC4F400C33D24 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		08FC0F6526395D620090EDB0 /* E-commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FC0F6826395D620090EDB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08FC0F6A26395D620090EDB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			children = (
 				08FC0F6C26395D620090EDB0 /* ViewController.swift */,
 				08800AE8263AB69900C33D24 /* SignUpViewController.swift */,
+				08800B07263AC4F400C33D24 /* SignInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -94,7 +97,6 @@
 				EEC6F7C8E1999440601BCA91 /* Pods-E-commerce.debug.xcconfig */,
 				DB4236B842275AD0F30F8A6A /* Pods-E-commerce.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -224,6 +226,7 @@
 				08FC0F6D26395D620090EDB0 /* ViewController.swift in Sources */,
 				08FC0F6926395D620090EDB0 /* AppDelegate.swift in Sources */,
 				08FC0F6B26395D620090EDB0 /* SceneDelegate.swift in Sources */,
+				08800B08263AC4F400C33D24 /* SignInViewController.swift in Sources */,
 				08800AE9263AB69900C33D24 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
