@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have an account?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0B-ol-LUm">
@@ -84,7 +84,7 @@
             <objects>
                 <viewController id="TYG-E7-ioD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VUE-ea-YeQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cif-f7-6Xg">
@@ -135,12 +135,12 @@
             </objects>
             <point key="canvasLocation" x="742.02898550724649" y="-226.33928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="G7R-9b-Fab">
             <objects>
-                <viewController id="yeA-T9-Z3d" sceneMemberID="viewController">
+                <viewController id="yeA-T9-Z3d" customClass="SignUpViewController" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cIn-6B-nSw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nAZ-Dl-cd7">
@@ -159,6 +159,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneBtnPressed:" destination="yeA-T9-Z3d" eventType="touchUpInside" id="jLB-CS-WBf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sm8-WF-9tT">
                                 <rect key="frame" x="139" y="80" width="136" height="48"/>
@@ -187,6 +190,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hs2-TM-HJJ"/>
+                    <connections>
+                        <outlet property="doneBtn" destination="Jaa-fj-igd" id="J0t-m0-1NP"/>
+                        <outlet property="emailText" destination="lIj-kO-Cw1" id="8XN-yc-8wb"/>
+                        <outlet property="passwordText" destination="nAZ-Dl-cd7" id="rJu-SH-T2P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZa-Jq-xcE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
