@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+
+
 struct ProductManager{
     let productUrl = "https://fakestoreapi.com/products"
     
@@ -47,8 +49,7 @@ struct ProductManager{
             let decodedData = try decoder.decode([Products].self, from: productData)
             
             for product in decodedData {
-                 print(product.image)
-                
+                print(product.image)
             }
             
         }catch{
