@@ -8,13 +8,21 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Black.ttf">
+            <string>Roboto-Black</string>
+        </array>
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have an account?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0B-ol-LUm">
@@ -79,12 +87,12 @@
             </objects>
             <point key="canvasLocation" x="13.043478260869566" y="88.392857142857139"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="z5D-O5-ych">
             <objects>
-                <viewController id="TYG-E7-ioD" customClass="SignInViewController" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TYG-E7-ioD" customClass="SignInVC" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VUE-ea-YeQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cif-f7-6Xg">
@@ -135,6 +143,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="J4N-dj-PvF"/>
                     <connections>
+                        <outlet property="doneBtn" destination="kqg-S8-1e1" id="uAv-7N-yxx"/>
                         <outlet property="emailText" destination="d0C-Ie-v6t" id="3my-Ug-JE7"/>
                         <outlet property="passwordText" destination="Cif-f7-6Xg" id="U5Y-5O-aUT"/>
                     </connections>
@@ -143,12 +152,12 @@
             </objects>
             <point key="canvasLocation" x="742.02898550724649" y="-226.33928571428569"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign UpVC-->
         <scene sceneID="G7R-9b-Fab">
             <objects>
-                <viewController id="yeA-T9-Z3d" customClass="SignUpViewController" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yeA-T9-Z3d" customClass="SignUpVC" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cIn-6B-nSw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nAZ-Dl-cd7">
@@ -209,28 +218,18 @@
             </objects>
             <point key="canvasLocation" x="742" y="447"/>
         </scene>
-        <!--Products View Controller-->
+        <!--ProductsVC-->
         <scene sceneID="7RZ-Nt-7yQ">
             <objects>
-                <viewController id="hyr-pT-HXO" customClass="ProductsViewController" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hyr-pT-HXO" customClass="ProductsVC" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BO2-7v-vVL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D8t-Cx-Ay2">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReuseIdentifier" id="dE8-mw-oMg">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dE8-mw-oMg" id="J2t-Q8-3pd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tKw-oM-jiE"/>
@@ -239,11 +238,74 @@
                     <navigationItem key="navigationItem" id="1ow-ve-dOn"/>
                     <connections>
                         <outlet property="tableView" destination="D8t-Cx-Ay2" id="ihg-XK-ZBo"/>
+                        <segue destination="zff-nx-Ulu" kind="presentation" identifier="detailsSegue" id="cvn-jc-Lx4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLi-cV-IXJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1815.9420289855075" y="128.57142857142856"/>
+        </scene>
+        <!--Product DetailsVC-->
+        <scene sceneID="obq-6f-jpt">
+            <objects>
+                <viewController id="zff-nx-Ulu" customClass="ProductDetailsVC" customModule="E_commerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tO4-GB-EH1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ENs-BI-bDP">
+                                <rect key="frame" x="82" y="51" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="R7q-G2-HXe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oI-PX-wTn">
+                                <rect key="frame" x="47" y="351" width="320" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnk-VH-Jxh">
+                                <rect key="frame" x="47" y="386.5" width="320" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt9-6h-6Ur">
+                                <rect key="frame" x="47" y="420.5" width="320" height="20"/>
+                                <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zD7-QP-7KD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nnk-VH-Jxh" firstAttribute="leading" secondItem="zD7-QP-7KD" secondAttribute="leading" constant="47" id="2s8-Fl-kOr"/>
+                            <constraint firstItem="9oI-PX-wTn" firstAttribute="top" secondItem="ENs-BI-bDP" secondAttribute="bottom" constant="50" id="4wA-kE-Tds"/>
+                            <constraint firstItem="ENs-BI-bDP" firstAttribute="top" secondItem="zD7-QP-7KD" secondAttribute="top" constant="51" id="AZL-A5-rjn"/>
+                            <constraint firstItem="ENs-BI-bDP" firstAttribute="leading" secondItem="zD7-QP-7KD" secondAttribute="leading" constant="82" id="WFZ-Sg-X2J"/>
+                            <constraint firstItem="zD7-QP-7KD" firstAttribute="trailing" secondItem="ENs-BI-bDP" secondAttribute="trailing" constant="82" id="ZIm-K4-gWs"/>
+                            <constraint firstItem="9oI-PX-wTn" firstAttribute="leading" secondItem="zD7-QP-7KD" secondAttribute="leading" constant="47" id="aCP-UT-D33"/>
+                            <constraint firstItem="gt9-6h-6Ur" firstAttribute="top" secondItem="nnk-VH-Jxh" secondAttribute="bottom" constant="15" id="aNu-Ar-f77"/>
+                            <constraint firstItem="zD7-QP-7KD" firstAttribute="trailing" secondItem="9oI-PX-wTn" secondAttribute="trailing" constant="47" id="dVl-hO-lEg"/>
+                            <constraint firstItem="zD7-QP-7KD" firstAttribute="trailing" secondItem="nnk-VH-Jxh" secondAttribute="trailing" constant="47" id="mmT-Jl-XnS"/>
+                            <constraint firstItem="nnk-VH-Jxh" firstAttribute="top" secondItem="9oI-PX-wTn" secondAttribute="bottom" constant="15" id="oO3-qX-xYh"/>
+                            <constraint firstItem="ENs-BI-bDP" firstAttribute="centerX" secondItem="tO4-GB-EH1" secondAttribute="centerX" id="rkW-tS-5TW"/>
+                            <constraint firstItem="zD7-QP-7KD" firstAttribute="trailing" secondItem="gt9-6h-6Ur" secondAttribute="trailing" constant="47" id="svC-uj-Wvh"/>
+                            <constraint firstItem="gt9-6h-6Ur" firstAttribute="leading" secondItem="zD7-QP-7KD" secondAttribute="leading" constant="47" id="vbk-dr-uP3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailsText" destination="nnk-VH-Jxh" id="smb-M0-2O5"/>
+                        <outlet property="priceText" destination="gt9-6h-6Ur" id="8Qn-V2-jBS"/>
+                        <outlet property="productImage" destination="ENs-BI-bDP" id="kOH-yK-vih"/>
+                        <outlet property="titleText" destination="9oI-PX-wTn" id="qwM-94-cYL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cb6-Gz-gte" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2646" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Avb-ms-SXM">
@@ -264,7 +326,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vsl-zQ-Y3g"/>
+        <segue reference="xn2-B1-JSK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="ButtonColor">

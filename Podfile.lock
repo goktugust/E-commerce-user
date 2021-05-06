@@ -41,6 +41,8 @@ PODS:
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
     - nanopb/encode (= 2.30907.0)
+  - nanopb/decode (2.30907.0)
+  - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
   - SDWebImage (5.9.5):
     - SDWebImage/Core (= 5.9.5)
@@ -75,6 +77,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 
-PODFILE CHECKSUM: f49e4254f586abe952e8f6346d99791012bec867
+PODFILE CHECKSUM: f21cec00e6f07f51f485ce2125374dfebf51414c
 
 COCOAPODS: 1.10.1

@@ -5,8 +5,8 @@
 //  Created by Göktuğ Üstüner on 29.04.2021.
 //
 import Foundation
- 
-struct Products: Decodable {
+
+struct Products: Codable {
     let id: Int
     let title: String
     let price: Float

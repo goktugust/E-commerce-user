@@ -8,56 +8,22 @@
 import Foundation
 import UIKit
 
-
-
-struct ProductManager{
-    let productUrl = "https://fakestoreapi.com/products"
+struct ProductManager {
     
-    func fetchData(productID: Int) {
-        let urlString = "\(productUrl)/\(String(productID))"
-        performRequest(urlString: urlString)
-    }
-    
-    func allData(){
-        let url = "https://fakestoreapi.com/products"
-        performRequest(urlString: url)
-    }
-    
-    func performRequest(urlString: String){
-        if let url = URL(string: urlString){
+    func fetchProduct(onCompletion: @escaping ([Products]) -> () ){
+        let url = URL(string: "https://fakestoreapi.com/products")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            let session = URLSession(configuration: .default)
-            
-            let task = session.dataTask(with: url) { (data, urlResponse, error) in
-                if error != nil {
-                    print(error!)
-                    return
-                }
-                
-                if let safeData = data {
-                    parseJSON(productData: safeData)
-                }
+            guard let data = data else {return}
+            let decoder = JSONDecoder()
+            do{
+                let productList = try decoder.decode([Products].self, from: data)
+                onCompletion(productList)
+            }catch {
+                let error = error
+                print(error.localizedDescription)
             }
-            task.resume()
-            
         }
+        task.resume()
     }
-    
-    func parseJSON(productData: Data){
-        let decoder = JSONDecoder()
-        do {
-            let decodedData = try decoder.decode([Products].self, from: productData)
-            
-            for product in decodedData {
-                print(product.image)
-            }
-            
-        }catch{
-            print(error)
-        }
-        
-    }
-    
 }
-
-

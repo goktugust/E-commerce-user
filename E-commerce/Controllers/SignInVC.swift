@@ -8,10 +8,15 @@
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController {
+class SignInVC: UIViewController {
     
+    @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    
+    override func viewDidLoad() {
+        doneBtn.layer.cornerRadius = doneBtn.frame.size.height / 2
+    }
     
     @IBAction func doneBtnPressed(_ sender: UIButton) {
         
@@ -20,7 +25,7 @@ class SignInViewController: UIViewController {
                 if let e = error {
                     print(e.localizedDescription)
                 }else {
-                    print("Sgned in")
+                    print("Signed in")
                 }
             }
         }

@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpVC: UIViewController {
     
     @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var passwordText: UITextField!
@@ -16,7 +16,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        doneBtn.layer.cornerRadius = doneBtn.frame.size.height / 2
     }
     
     @IBAction func doneBtnPressed(_ sender: UIButton) {
