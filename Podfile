@@ -7,8 +7,10 @@ target 'E-commerce' do
 
   # Pods for E-commerce
 
+  #platform :ios, '9.0'
   pod 'Firebase/Auth'
-  platform :ios, '9.0'
+  pod 'Firebase/Firestore'
   pod 'SDWebImage'
+  
 
 end

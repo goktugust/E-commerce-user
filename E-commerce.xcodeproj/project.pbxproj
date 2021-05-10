@@ -27,7 +27,11 @@
 		08800B0B263ACCE900C33D24 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08800B0A263ACCE900C33D24 /* Products.swift */; };
 		08800B12263ACDC200C33D24 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08800B11263ACDC200C33D24 /* ProductManager.swift */; };
 		08800B18263AD3AA00C33D24 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08800B17263AD3AA00C33D24 /* ProductsVC.swift */; };
+		088410DB2644733F00C3AE02 /* BucketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088410DA2644733F00C3AE02 /* BucketVC.swift */; };
 		08B4F6A626417AD20061B7A1 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B4F6A526417AD20061B7A1 /* ProductDetailsVC.swift */; };
+		08F36B0726481219005AD7E7 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F36B0626481219005AD7E7 /* Bucket.swift */; };
+		08F36B1626481C24005AD7E7 /* SepetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F36B1426481C24005AD7E7 /* SepetCell.swift */; };
+		08F36B1726481C24005AD7E7 /* SepetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08F36B1526481C24005AD7E7 /* SepetCell.xib */; };
 		08FC0F6926395D620090EDB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC0F6826395D620090EDB0 /* AppDelegate.swift */; };
 		08FC0F6B26395D620090EDB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC0F6A26395D620090EDB0 /* SceneDelegate.swift */; };
 		08FC0F6D26395D620090EDB0 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC0F6C26395D620090EDB0 /* WelcomeVC.swift */; };
@@ -58,7 +62,11 @@
 		08800B0A263ACCE900C33D24 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		08800B11263ACDC200C33D24 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		08800B17263AD3AA00C33D24 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
+		088410DA2644733F00C3AE02 /* BucketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketVC.swift; sourceTree = "<group>"; };
 		08B4F6A526417AD20061B7A1 /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
+		08F36B0626481219005AD7E7 /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
+		08F36B1426481C24005AD7E7 /* SepetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetCell.swift; sourceTree = "<group>"; };
+		08F36B1526481C24005AD7E7 /* SepetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SepetCell.xib; sourceTree = "<group>"; };
 		08FC0F6526395D620090EDB0 /* E-commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FC0F6826395D620090EDB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08FC0F6A26395D620090EDB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +98,8 @@
 				08FC0F6E26395D620090EDB0 /* Main.storyboard */,
 				081A080C263EAD07003E85EE /* CustomCell.swift */,
 				081A080D263EAD07003E85EE /* CustomCell.xib */,
+				08F36B1426481C24005AD7E7 /* SepetCell.swift */,
+				08F36B1526481C24005AD7E7 /* SepetCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +131,7 @@
 				08800B07263AC4F400C33D24 /* SignInVC.swift */,
 				08800B17263AD3AA00C33D24 /* ProductsVC.swift */,
 				08B4F6A526417AD20061B7A1 /* ProductDetailsVC.swift */,
+				088410DA2644733F00C3AE02 /* BucketVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -130,6 +141,7 @@
 			children = (
 				08800B0A263ACCE900C33D24 /* Products.swift */,
 				08800B11263ACDC200C33D24 /* ProductManager.swift */,
+				08F36B0626481219005AD7E7 /* Bucket.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +260,7 @@
 				082ED2242642BEF30068978D /* Roboto-BoldItalic.ttf in Resources */,
 				08FC0F7526395D630090EDB0 /* LaunchScreen.storyboard in Resources */,
 				082ED2192642BEF30068978D /* Roboto-Italic.ttf in Resources */,
+				08F36B1726481C24005AD7E7 /* SepetCell.xib in Resources */,
 				082ED2222642BEF30068978D /* Roboto-Black.ttf in Resources */,
 				082ED2212642BEF30068978D /* Roboto-LightItalic.ttf in Resources */,
 				08800AF0263ABB4600C33D24 /* GoogleService-Info.plist in Resources */,
@@ -317,11 +330,14 @@
 				08FC0F6D26395D620090EDB0 /* WelcomeVC.swift in Sources */,
 				08FC0F6926395D620090EDB0 /* AppDelegate.swift in Sources */,
 				08800B18263AD3AA00C33D24 /* ProductsVC.swift in Sources */,
+				08F36B1626481C24005AD7E7 /* SepetCell.swift in Sources */,
 				08800B12263ACDC200C33D24 /* ProductManager.swift in Sources */,
 				08FC0F6B26395D620090EDB0 /* SceneDelegate.swift in Sources */,
+				088410DB2644733F00C3AE02 /* BucketVC.swift in Sources */,
 				081A080E263EAD07003E85EE /* CustomCell.swift in Sources */,
 				08800B0B263ACCE900C33D24 /* Products.swift in Sources */,
 				08B4F6A626417AD20061B7A1 /* ProductDetailsVC.swift in Sources */,
+				08F36B0726481219005AD7E7 /* Bucket.swift in Sources */,
 				08800B08263AC4F400C33D24 /* SignInVC.swift in Sources */,
 				08800AE9263AB69900C33D24 /* SignUpVC.swift in Sources */,
 			);

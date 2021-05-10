@@ -14,7 +14,7 @@ class ProductsVC: UIViewController{
     let productDetails = ProductDetailsVC()
     let productManager = ProductManager()
     var productArray = [Products]()
-    var cartTotal = [Any]()
+//    var cartTotal = [Any]()
     var loading = true
     
     @IBOutlet var cart: UIBarButtonItem!
@@ -22,6 +22,7 @@ class ProductsVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -67,15 +68,17 @@ extension ProductsVC:UITableViewDataSource, UITableViewDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ProductDetailsVC{
-            
-            print(tableView.indexPathForSelectedRow!)
-            print(productArray[tableView.indexPathForSelectedRow!.row])
+//
+//            print(tableView.indexPathForSelectedRow!)
+//            print(productArray[tableView.indexPathForSelectedRow!.row])
             
             destination.ident = productArray[tableView.indexPathForSelectedRow!.row].title
             destination.image = productArray[tableView.indexPathForSelectedRow!.row].image
             destination.category = productArray[tableView.indexPathForSelectedRow!.row].category
             destination.detail = productArray[tableView.indexPathForSelectedRow!.row].description
             destination.price = productArray[tableView.indexPathForSelectedRow!.row].price
+            destination.detailedView.append(productArray[tableView.indexPathForSelectedRow!.row])
+            destination.id = productArray[tableView.indexPathForSelectedRow!.row].id
             
                 
         }
