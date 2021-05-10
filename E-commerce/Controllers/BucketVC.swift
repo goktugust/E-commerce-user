@@ -12,14 +12,28 @@ import SDWebImage
 class BucketVC: UIViewController {
     
     var sepet = [Bucket]()
-    
+    var tutar = [Float]()
     let db = Firestore.firestore()
     
     @IBOutlet weak var silBtn: UIButton!
     @IBOutlet weak var onayBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sepetTutarı: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        sepetTutarı.text = "$0"
+        onayBtn.backgroundColor = .clear
+        onayBtn.layer.cornerRadius = 5
+        onayBtn.layer.borderWidth = 1
+        onayBtn.layer.borderColor = UIColor.black.cgColor
+        
+        silBtn.backgroundColor = .clear
+        silBtn.layer.cornerRadius = 5
+        silBtn.layer.borderWidth = 1
+        silBtn.layer.borderColor = UIColor.black.cgColor
         
         
         tableView.dataSource = self
@@ -27,8 +41,10 @@ class BucketVC: UIViewController {
         
         let anonFunc = { (fetchedProductList: [Bucket]) in
             self.sepet = fetchedProductList
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                
             }
             
         }
@@ -50,15 +66,12 @@ class BucketVC: UIViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
-                   
                 }
                 self.viewDidLoad()
             }
     }
     
     @IBAction func onaylaPressed(_ sender: UIButton) {
-        
-        
     }
     
     //MARK: - Fetch data from firebase
@@ -105,8 +118,14 @@ extension BucketVC: UITableViewDataSource {
         let product = sepet[indexPath.row]
         cell.productImage.sd_setImage(with: URL(string: product.image), placeholderImage: UIImage(named: "none") )
         cell.adetLabel.text = "Adet: \(String(sepet[indexPath.row].adet))"
-        cell.totalLabel.text = "Fiyat: \(String(sepet[indexPath.row].totalPara))"
+        cell.totalLabel.text = "Fiyat: $\(String(sepet[indexPath.row].totalPara))"
         cell.titleLabel.text = sepet[indexPath.row].title
+        tutar.append(sepet[indexPath.row].totalPara)
+        if self.sepet.count == tutar.count{
+            let total = tutar.reduce(0, +)
+            sepetTutarı.text = "$\(String(total))"
+        }
+        
         return cell
     }
     

@@ -31,7 +31,13 @@ class ProductDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //categoryText.text = category
+        
+        
+        sepeteEkle.backgroundColor = .clear
+        sepeteEkle.layer.cornerRadius = 5
+        sepeteEkle.layer.borderWidth = 1
+        sepeteEkle.layer.borderColor = UIColor.black.cgColor
+        
         detailsText.text = detail
         titleText.text = ident
         priceText.text = "$\(price)"

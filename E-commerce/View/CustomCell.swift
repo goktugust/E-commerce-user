@@ -9,12 +9,14 @@ import UIKit
 
 class CustomCell: UITableViewCell {
 
+    @IBOutlet weak var stack: UIStackView!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var detailsView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         detailsView.layer.cornerRadius = detailsView.frame.size.height / 2
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
