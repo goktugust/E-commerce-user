@@ -127,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				08FC0F6C26395D620090EDB0 /* WelcomeVC.swift */,
-				08800AE8263AB69900C33D24 /* SignUpVC.swift */,
 				08800B07263AC4F400C33D24 /* SignInVC.swift */,
+				08800AE8263AB69900C33D24 /* SignUpVC.swift */,
 				08800B17263AD3AA00C33D24 /* ProductsVC.swift */,
 				08B4F6A526417AD20061B7A1 /* ProductDetailsVC.swift */,
 				088410DA2644733F00C3AE02 /* BucketVC.swift */,

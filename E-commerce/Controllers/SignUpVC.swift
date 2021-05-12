@@ -27,8 +27,12 @@ class SignUpVC: UIViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                 if let e = error {
+                    let alert = UIAlertController(title: "Error!", message: "\(e.localizedDescription)", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                     print(e.localizedDescription)
                 }else{
+                    self.performSegue(withIdentifier: "signUp", sender: self)
                     print("succesfuly signed")
                 }
             }

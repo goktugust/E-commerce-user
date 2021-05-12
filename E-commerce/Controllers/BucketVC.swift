@@ -23,7 +23,8 @@ class BucketVC: UIViewController {
         super.viewDidLoad()
         
         
-        
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
         sepetTutarı.text = "$0"
         onayBtn.backgroundColor = .clear
         onayBtn.layer.cornerRadius = 5
@@ -41,7 +42,6 @@ class BucketVC: UIViewController {
         
         let anonFunc = { (fetchedProductList: [Bucket]) in
             self.sepet = fetchedProductList
-            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 
@@ -52,59 +52,67 @@ class BucketVC: UIViewController {
     }
     
     @IBAction func silPressed(_ sender: UIButton) {
-        let mail = Auth.auth().currentUser?.email
-        db.collection("Sepet")
-            .whereField("user", isEqualTo: mail!)
-            .getDocuments { (snapshot, error) in
-                if let e = error {
-                    print(e.localizedDescription)
-                }else {
-                    guard let snap = snapshot else {return}
-                    for document in snap.documents {
-                        document.reference.delete()
-                    }
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
+
+    }
+    
+    @IBAction func emptyBucket(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Sepet", message: "Ürünleri boşaltmak istediğinize emin misiniz?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Evet", style: UIAlertAction.Style.destructive, handler: { (action) in
+            let mail = Auth.auth().currentUser?.email
+            self.db.collection("Sepet")
+                .whereField("user", isEqualTo: mail!)
+                .getDocuments { (snapshot, error) in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    }else {
+                        guard let snap = snapshot else {return}
+                        for document in snap.documents {
+                            document.reference.delete()
+                        }
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        self.navigationController?.popViewController(animated: true)
                     }
                 }
-                self.viewDidLoad()
-            }
+        }))
+        alert.addAction(UIAlertAction(title: "Hayır", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
+    
     
     @IBAction func onaylaPressed(_ sender: UIButton) {
     }
     
     //MARK: - Fetch data from firebase
     func loadDB(onCompletion: @escaping ([Bucket]) -> ()){
-        let mail = Auth.auth().currentUser?.email
-        db.collection("Sepet")
-            .order(by: "date")
-            .whereField("user", isEqualTo: mail!)
-            .getDocuments { (snapshot, error) in
-                if let e = error {
-                    print(e.localizedDescription)
-                }else {
-                    guard let snap = snapshot else {return}
-                    
-                    for document in snap.documents {
-                        let data = document.data()
-                        let title = data["title"] as? String ?? ""
-                        let description = data["description"] as? String ?? ""
-                        let category = data["category"] as? String ?? ""
-                        let id = data["id"] as? Int ?? 0
-                        let image = data["image"] as? String ?? ""
-                        let price = data["price"] as? Float ?? 0
-                        let adet = data["adet"] as? Int ?? 1
-                        let totalPara = data["totalPara"] as? Float ?? 0
-                        let product = Bucket(adet: adet, category: category, description: description, id: id, image: image, price: price, title: title, totalPara: totalPara)
-                        self.sepet.append(product)
+        if let mail = Auth.auth().currentUser?.email{
+            db.collection("Sepet")
+                .order(by: "date")
+                .whereField("user", isEqualTo: mail)
+                .getDocuments { (snapshot, error) in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    }else {
+                        guard let snap = snapshot else {return}
                         
+                        for document in snap.documents {
+                            let data = document.data()
+                            let title = data["title"] as? String ?? ""
+                            let description = data["description"] as? String ?? ""
+                            let category = data["category"] as? String ?? ""
+                            let id = data["id"] as? Int ?? 0
+                            let image = data["image"] as? String ?? ""
+                            let price = data["price"] as? Float ?? 0
+                            let adet = data["adet"] as? Int ?? 1
+                            let totalPara = data["totalPara"] as? Float ?? 0
+                            let product = Bucket(adet: adet, category: category, description: description, id: id, image: image, price: price, title: title, totalPara: totalPara)
+                            self.sepet.append(product)
+                        }
+                        onCompletion(self.sepet)
                     }
-                    
-                    onCompletion(self.sepet)
                 }
-                
-            }
+        }
     }
 }
 //MARK: - Tableview handling
@@ -124,6 +132,11 @@ extension BucketVC: UITableViewDataSource {
         if self.sepet.count == tutar.count{
             let total = tutar.reduce(0, +)
             sepetTutarı.text = "$\(String(total))"
+        }
+        
+        if self.sepet.count != 0{
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+            self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.9843137255, green: 0.8901960784, blue: 0.1450980392, alpha: 1)
         }
         
         return cell

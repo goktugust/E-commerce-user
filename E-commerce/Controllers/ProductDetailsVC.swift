@@ -28,6 +28,7 @@ class ProductDetailsVC: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var addProductNumber: UILabel!
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

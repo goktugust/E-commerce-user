@@ -117,7 +117,6 @@
                                 </state>
                                 <connections>
                                     <action selector="doneBtnPressed:" destination="TYG-E7-ioD" eventType="touchUpInside" id="1wP-96-PC9"/>
-                                    <segue destination="hyr-pT-HXO" kind="show" id="xn2-B1-JSK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign-in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nS9-Yh-KbL">
@@ -150,6 +149,7 @@
                         <outlet property="doneBtn" destination="kqg-S8-1e1" id="uAv-7N-yxx"/>
                         <outlet property="emailText" destination="d0C-Ie-v6t" id="3my-Ug-JE7"/>
                         <outlet property="passwordText" destination="Cif-f7-6Xg" id="U5Y-5O-aUT"/>
+                        <segue destination="hyr-pT-HXO" kind="show" identifier="signIn" id="Uc6-pa-DgR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M68-ZQ-Dib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -164,7 +164,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cpt-Xu-eIS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cpt-Xu-eIS">
                                 <rect key="frame" x="0.0" y="62" width="414" height="746"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -214,7 +214,14 @@
                             <constraint firstItem="Cpt-Xu-eIS" firstAttribute="trailing" secondItem="5Id-0J-su4" secondAttribute="trailing" id="wbt-11-LcL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4w7-0S-qxL"/>
+                    <navigationItem key="navigationItem" id="4w7-0S-qxL">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="trash" catalog="system" id="iC7-sh-Cwb">
+                            <color key="tintColor" name="labelYellow"/>
+                            <connections>
+                                <action selector="emptyBucket:" destination="86V-vp-qwK" id="JF3-Cl-Eh0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="onayBtn" destination="1NB-0m-ikp" id="IeS-Tu-82u"/>
                         <outlet property="sepetTutarı" destination="cCG-My-LTP" id="HOp-RF-R3f"/>
@@ -268,7 +275,6 @@
                                 </state>
                                 <connections>
                                     <action selector="doneBtnPressed:" destination="yeA-T9-Z3d" eventType="touchUpInside" id="jLB-CS-WBf"/>
-                                    <segue destination="hyr-pT-HXO" kind="show" id="vsl-zQ-Y3g"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sm8-WF-9tT">
@@ -302,6 +308,7 @@
                         <outlet property="doneBtn" destination="Jaa-fj-igd" id="J0t-m0-1NP"/>
                         <outlet property="emailText" destination="lIj-kO-Cw1" id="8XN-yc-8wb"/>
                         <outlet property="passwordText" destination="nAZ-Dl-cd7" id="rJu-SH-T2P"/>
+                        <segue destination="hyr-pT-HXO" kind="show" identifier="signUp" id="a0H-lr-pZV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZa-Jq-xcE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -326,6 +333,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="1ow-ve-dOn">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="UqQ-WT-hLy">
+                            <color key="tintColor" name="labelYellow"/>
+                            <connections>
+                                <action selector="logOutPressed:" destination="hyr-pT-HXO" id="c85-Vh-X0U"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="fjX-YF-BqL">
                             <color key="tintColor" name="labelYellow"/>
                             <connections>
@@ -466,8 +479,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="labelYellow">
-            <color red="1" green="0.89000000000000001" blue="0.14999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98400002717971802" green="0.88999998569488525" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

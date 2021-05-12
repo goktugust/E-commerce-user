@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import Firebase
 
 class ProductsVC: UIViewController{
     
@@ -22,7 +23,7 @@ class ProductsVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //navigationController?.
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -36,6 +37,23 @@ class ProductsVC: UIViewController{
         }
         productManager.fetchProduct(onCompletion: anonFunc)
     }
+    
+    
+    
+    @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
+        
+        do{
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+            print("Log out")
+            
+        }catch let signOutError as NSError{
+            print("Error signing out: %@", signOutError)
+        }
+        
+    }
+    
+    
 }
 //MARK: - Tableview handling
 extension ProductsVC:UITableViewDataSource, UITableViewDelegate{
@@ -51,7 +69,7 @@ extension ProductsVC:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
-        
+        cell.selectionStyle = .none
         if loading {
             cell.label.text = "Loading..."
         }else {
@@ -63,6 +81,7 @@ extension ProductsVC:UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         performSegue(withIdentifier: "detailsSegue", sender: self)
     }
     
