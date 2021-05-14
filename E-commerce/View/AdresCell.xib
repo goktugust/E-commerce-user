@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="adresCell" rowHeight="54" id="KGk-i7-Jjw" customClass="AdresCell" customModule="E_commerce" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="339" height="54"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipS-ke-gp5">
+                        <rect key="frame" x="38" y="5" width="296" height="44"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gCe-mt-0tJ">
+                                <rect key="frame" x="5" y="5" width="286" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vve-HM-RmT">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7C-tG-2Pq">
+                                        <rect key="frame" x="0.0" y="19.5" width="286" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gCe-mt-0tJ" secondAttribute="trailing" constant="5" id="1bm-5t-ooN"/>
+                            <constraint firstItem="gCe-mt-0tJ" firstAttribute="top" secondItem="ipS-ke-gp5" secondAttribute="top" constant="5" id="38c-EZ-qBO"/>
+                            <constraint firstAttribute="bottom" secondItem="gCe-mt-0tJ" secondAttribute="bottom" constant="5" id="Bbb-og-6AM"/>
+                            <constraint firstItem="gCe-mt-0tJ" firstAttribute="leading" secondItem="ipS-ke-gp5" secondAttribute="leading" constant="5" id="DjT-bE-18H"/>
+                            <constraint firstItem="gCe-mt-0tJ" firstAttribute="leading" secondItem="ipS-ke-gp5" secondAttribute="leading" constant="5" id="WLA-Fr-KV4"/>
+                            <constraint firstAttribute="bottom" secondItem="gCe-mt-0tJ" secondAttribute="bottom" constant="5" id="buT-PB-40D"/>
+                            <constraint firstItem="gCe-mt-0tJ" firstAttribute="top" secondItem="ipS-ke-gp5" secondAttribute="top" constant="5" id="fY7-Ua-I2R"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PMR-zU-52Q">
+                        <rect key="frame" x="5" y="10.5" width="33" height="33"/>
+                        <color key="tintColor" name="labelYellow"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="T9s-sC-SvH"/>
+                            <constraint firstAttribute="width" constant="33" id="flR-K1-frp"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PMR-zU-52Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="2xR-4A-Uec"/>
+                    <constraint firstItem="ipS-ke-gp5" firstAttribute="leading" secondItem="PMR-zU-52Q" secondAttribute="trailing" id="Smo-L7-um0"/>
+                    <constraint firstItem="ipS-ke-gp5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="bif-0R-87G"/>
+                    <constraint firstAttribute="bottom" secondItem="ipS-ke-gp5" secondAttribute="bottom" constant="5" id="caM-dE-J9L"/>
+                    <constraint firstAttribute="trailing" secondItem="ipS-ke-gp5" secondAttribute="trailing" constant="5" id="dzE-fi-Xif"/>
+                    <constraint firstItem="PMR-zU-52Q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hkg-JH-usy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="adresAdi" destination="vve-HM-RmT" id="MG3-Bh-chR"/>
+                <outlet property="adresTarifi" destination="i7C-tG-2Pq" id="eMY-bP-DXQ"/>
+                <outlet property="adresView" destination="ipS-ke-gp5" id="Qgo-xR-wXh"/>
+                <outlet property="home" destination="PMR-zU-52Q" id="dL4-kC-awE"/>
+            </connections>
+            <point key="canvasLocation" x="-202.17391304347828" y="60.9375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <namedColor name="labelYellow">
+            <color red="0.98400002717971802" green="0.88999998569488525" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

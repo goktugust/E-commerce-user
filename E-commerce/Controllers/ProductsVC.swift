@@ -11,7 +11,7 @@ import Firebase
 
 class ProductsVC: UIViewController{
     
-    
+    let adress = PersonalVC()
     let productDetails = ProductDetailsVC()
     let productManager = ProductManager()
     var productArray = [Products]()
@@ -20,9 +20,12 @@ class ProductsVC: UIViewController{
     
     @IBOutlet var cart: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var adresLabel: UILabel!
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //navigationController?.
         tableView.delegate = self
         tableView.dataSource = self
@@ -42,15 +45,15 @@ class ProductsVC: UIViewController{
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
         
-        do{
-            try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
-            print("Log out")
-            
-        }catch let signOutError as NSError{
-            print("Error signing out: %@", signOutError)
-        }
-        
+//        do{
+//            try Auth.auth().signOut()
+//            navigationController?.popToRootViewController(animated: true)
+//            print("Log out")
+//            
+//        }catch let signOutError as NSError{
+//            print("Error signing out: %@", signOutError)
+//        }
+//        
     }
     
     
@@ -103,6 +106,7 @@ extension ProductsVC:UITableViewDataSource, UITableViewDelegate{
         }
     }
 }
+
 
 
 

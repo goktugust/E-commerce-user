@@ -15,7 +15,6 @@ class BucketVC: UIViewController {
     var tutar = [Float]()
     let db = Firestore.firestore()
     
-    @IBOutlet weak var silBtn: UIButton!
     @IBOutlet weak var onayBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sepetTutarı: UILabel!
@@ -31,12 +30,6 @@ class BucketVC: UIViewController {
         onayBtn.layer.borderWidth = 1
         onayBtn.layer.borderColor = UIColor.black.cgColor
         
-        silBtn.backgroundColor = .clear
-        silBtn.layer.cornerRadius = 5
-        silBtn.layer.borderWidth = 1
-        silBtn.layer.borderColor = UIColor.black.cgColor
-        
-        
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SepetCell", bundle: nil), forCellReuseIdentifier: "sepetCell")
         
@@ -44,15 +37,9 @@ class BucketVC: UIViewController {
             self.sepet = fetchedProductList
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                
             }
-            
         }
         loadDB(onCompletion: anonFunc)
-    }
-    
-    @IBAction func silPressed(_ sender: UIButton) {
-
     }
     
     @IBAction func emptyBucket(_ sender: UIBarButtonItem) {
