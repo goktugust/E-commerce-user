@@ -85,8 +85,8 @@ class BucketVC: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sepet = sepetTutarı.text
-        if segue.destination is SiparisVerVC{
-            let vc = segue.destination as? SiparisVerVC
+        if segue.destination is GiveOrderVC{
+            let vc = segue.destination as? GiveOrderVC
             vc?.sepetTotal = sepet!
         }
     }

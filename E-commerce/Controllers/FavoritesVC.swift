@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import SDWebImage
 
-class FavorilerVC: UIViewController {
+class FavoritesVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var favorites = [Favorites]()
@@ -62,7 +62,7 @@ class FavorilerVC: UIViewController {
 
 }
 
-extension FavorilerVC: UITableViewDataSource{
+extension FavoritesVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favorites.count
     }

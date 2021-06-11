@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-class AdresSecVC: UIViewController {
+class ChangeAdressVC: UIViewController {
 
     var adresss = [Adress]()
     let db = Firestore.firestore()
@@ -62,7 +62,7 @@ class AdresSecVC: UIViewController {
 
 }
 
-extension AdresSecVC: UITableViewDataSource, UITableViewDelegate{
+extension ChangeAdressVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return adresss.count
     }

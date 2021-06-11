@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SeciliAdres{
+struct SelectedAdress{
     let seciliAdres: String?
     let seciliAdresAdi: String
 }

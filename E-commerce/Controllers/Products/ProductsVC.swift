@@ -11,7 +11,7 @@ import Firebase
 
 class ProductsVC: UIViewController{
     
-    var seciliAdres = [SeciliAdres]()
+    var seciliAdres = [SelectedAdress]()
     let adress = PersonalVC()
     let productDetails = ProductDetailsVC()
     let productManager = ProductManager()

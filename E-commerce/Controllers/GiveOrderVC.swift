@@ -8,12 +8,12 @@
 import UIKit
 import Firebase
 
-class SiparisVerVC: UIViewController, UITextViewDelegate {
+class GiveOrderVC: UIViewController, UITextViewDelegate {
     
     var sepetTotal = ""
     let db = Firestore.firestore()
     var sepet = [Bucket]()
-    var seciliAdres = [SeciliAdres]()
+    var seciliAdres = [SelectedAdress]()
     var okBucket = [GivenOrderDetailsFromFirestore]()
     var siparisIdFromUser = Int()
     
@@ -122,7 +122,7 @@ class SiparisVerVC: UIViewController, UITextViewDelegate {
     }
     
     //MARK: - Getting adress data from firestore and show the user his/her selected adress on the screen.
-    func loadAdres(onCompletion: @escaping ([SeciliAdres]) -> ()){
+    func loadAdres(onCompletion: @escaping ([SelectedAdress]) -> ()){
         let email = Auth.auth().currentUser?.email
         db.collection("Seçili Adres").document("Email").collection(email!).getDocuments { (snapshot, error) in
             if let e = error {
@@ -134,7 +134,7 @@ class SiparisVerVC: UIViewController, UITextViewDelegate {
                     let data = document.data()
                     let adresName = data["seciliAdresAdi"] as? String ?? ""
                     let adresLocation = data["seciliAdres"] as? String ?? ""
-                    let adres = SeciliAdres(seciliAdres: adresLocation, seciliAdresAdi: adresName)
+                    let adres = SelectedAdress(seciliAdres: adresLocation, seciliAdresAdi: adresName)
                     self.seciliAdres.append(adres)
                 }
                 onCompletion(self.seciliAdres)
@@ -143,7 +143,7 @@ class SiparisVerVC: UIViewController, UITextViewDelegate {
     }
     func getSelectedAdressFromFirestore(){
         seciliAdres = []
-        let anonFunc = {(fetchedSeciliAdres: [SeciliAdres]) in
+        let anonFunc = {(fetchedSeciliAdres: [SelectedAdress]) in
             if fetchedSeciliAdres.count == 0{
                 self.adresLabel.text = "Bir adres seçin veya ekleyin!"
             }else {
