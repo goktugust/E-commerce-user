@@ -10,6 +10,7 @@ import Firebase
 class AdressAddVC: UIViewController, UITextViewDelegate {
 
     
+    let personalVC = PersonalVC()
     let db = Firestore.firestore()
     @IBOutlet weak var kaydetBtn: UIButton!
     @IBOutlet weak var adressName: UITextField!
@@ -40,8 +41,10 @@ class AdressAddVC: UIViewController, UITextViewDelegate {
             ]){(error) in
                 if let e = error{
                     print("There was an issue saving data to firestore \(e.localizedDescription)")
+                   
                 }else {
                     print("Succsess saving data")
+                   
                     self.navigationController?.popViewController(animated: true)
                 }
             }

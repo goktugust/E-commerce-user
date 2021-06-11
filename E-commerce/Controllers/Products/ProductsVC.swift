@@ -11,18 +11,20 @@ import Firebase
 
 class ProductsVC: UIViewController{
     
+    var seciliAdres = [SeciliAdres]()
     let adress = PersonalVC()
     let productDetails = ProductDetailsVC()
     let productManager = ProductManager()
     var productArray = [Products]()
 //    var cartTotal = [Any]()
     var loading = true
-    
+    let db = Firestore.firestore()
     @IBOutlet var cart: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var adresLabel: UILabel!
     
-   
+    @IBOutlet weak var adresDegistirBtn: UIButton!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,19 +44,7 @@ class ProductsVC: UIViewController{
     }
     
     
-    
-    @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
-        
-//        do{
-//            try Auth.auth().signOut()
-//            navigationController?.popToRootViewController(animated: true)
-//            print("Log out")
-//            
-//        }catch let signOutError as NSError{
-//            print("Error signing out: %@", signOutError)
-//        }
-//        
-    }
+
     
     
 }

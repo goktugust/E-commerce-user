@@ -10,4 +10,5 @@ import Foundation
 struct User {
     let mail: String
     let name: String
+//    let siparisId: Int
 }

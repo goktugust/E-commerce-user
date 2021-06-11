@@ -28,7 +28,7 @@ class SignInVC: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                     print(e.localizedDescription)
                 }else {
-                    self.performSegue(withIdentifier: "signIn", sender: self)
+                    self.performSegue(withIdentifier: "signedIn", sender: self)
                     print("Signed in")
                 }
             }

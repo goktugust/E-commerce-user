@@ -17,15 +17,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sepetCell" rowHeight="114" id="KGk-i7-Jjw" customClass="SepetCell" customModule="E_commerce" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="389" height="114"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sepetCell" rowHeight="104" id="KGk-i7-Jjw" customClass="SepetCell" customModule="E_commerce" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="104"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="389" height="114"/>
+                <rect key="frame" x="0.0" y="0.0" width="430" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="voe-Kw-sND">
-                        <rect key="frame" x="10" y="10" width="369" height="60"/>
+                        <rect key="frame" x="10" y="10" width="410" height="60"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qle-hQ-ulk">
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -35,10 +35,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byY-3V-16n">
-                                <rect key="frame" x="80" y="0.0" width="289" height="60"/>
+                                <rect key="frame" x="80" y="0.0" width="330" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="apsfhaşsfkaşlsfhşashkfşahsgşahsgşasghkşaıshgkşasgıhşasıhgşahkhgşşahgşsahgkşa" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3A0-XY-9ev">
-                                        <rect key="frame" x="5" y="5" width="279" height="50"/>
+                                        <rect key="frame" x="5" y="5" width="320" height="50"/>
                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -55,19 +55,19 @@
                         </subviews>
                     </stackView>
                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuw-sP-xTu">
-                        <rect key="frame" x="10" y="75" width="369" height="29"/>
+                        <rect key="frame" x="10" y="75" width="410" height="19"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="81z-MH-Bum">
-                                <rect key="frame" x="0.0" y="0.0" width="369" height="29"/>
+                                <rect key="frame" x="0.0" y="0.0" width="410" height="19"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adet : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TH-2t-zb7">
-                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="205" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiyat :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWC-Bt-Ztn">
-                                        <rect key="frame" x="184.5" y="0.0" width="184.5" height="29"/>
+                                        <rect key="frame" x="205" y="0.0" width="205" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                 <outlet property="titleView" destination="byY-3V-16n" id="x7e-T3-zYc"/>
                 <outlet property="totalLabel" destination="tWC-Bt-Ztn" id="R6t-7c-rv7"/>
             </connections>
-            <point key="canvasLocation" x="-145.6521739130435" y="-111.83035714285714"/>
+            <point key="canvasLocation" x="-115.94202898550725" y="-115.17857142857142"/>
         </tableViewCell>
     </objects>
 </document>

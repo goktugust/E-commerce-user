@@ -40,7 +40,8 @@ class SignUpVC: UIViewController {
                         self.db.collection("Kullanıcılar").document("Email").collection(user).addDocument(data: [
                             
                             "mail": email,
-                            "name": name
+                            "name": name,
+                            "siparisId": 0
                         ]){(error) in
                             if let e = error {
                                 print("There was an issue saving data to firestore \(e.localizedDescription)")

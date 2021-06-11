@@ -10,6 +10,7 @@ import UIKit
 class AdresCell: UITableViewCell {
 
 
+
     @IBOutlet weak var adresTarifi: UILabel!
     @IBOutlet weak var adresAdi: UILabel!
     @IBOutlet weak var adresView: UIView!
